@@ -1,16 +1,24 @@
-// TaskItem.js
-import React from 'react';
-
 const TaskItem = ({ task, onRemove, onToggleComplete }) => {
+  
   return (
     <li>
+     <h3> 
       <span
-        style={{ textDecoration: task.completed ? 'line-through' : 'none' }}
+        style={{ textDecoration: task.completed ? 'line-through' : 'none'}}
         onClick={onToggleComplete}
       >
         {task.text}
       </span>
-      <button onClick={onRemove}>Remove</button>
+      
+      {/*Adds buttons and icons*/}
+      <button className='remove' onClick={() => onRemove(task.id)}>
+      <i className="fas fa-trash"></i> 
+      </button>
+      <button className='complete' onClick={() => onToggleComplete(task.id)}>
+      <i className="fas fa-check"></i> 
+      </button>
+
+    </h3> 
     </li>
   );
 };

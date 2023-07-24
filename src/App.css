@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+body {
+  background: #fff;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 50vh;
+  height: auto; /* Remove '50vh' from here */
+  background: #f1ea82;
+  margin: 15vh auto;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.add {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add:hover {
+  background-color: #0056b3; 
 }
+
+.remove {
+  display: inline-block;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease; 
+  background-color: #eb0839; 
+  margin-right: 5px;
+
+}
+
+.remove:hover {
+  background-color: #ff5555; 
+}
+
+.complete {
+  display: inline-block;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Colour transition */
+  background-color: #55cc55; 
+  
+
+}
+
+.complete:hover {
+  background-color: #5ce40e; 
+}
+
+ 
+ input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  font-size: 16px;
+  height: 40px;
+  width: 200px;
+  border: none;
+  outline:none;
+}
+  
+
+li {
+  font-size: 20px;
+  
+  word-wrap: break-word; 
+  white-space: pre-wrap; /* Preserves line breaks */
+}
+

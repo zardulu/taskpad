@@ -1,4 +1,3 @@
-// TaskList.js
 import React, { useState } from 'react';
 import TaskItem from './TaskItem';
 
@@ -12,26 +11,28 @@ const TaskList = () => {
 
   const addTask = () => {
     if (newTaskText.trim() !== '') {
-      setTasks([...tasks, { id: Date.now(), text: newTaskText, completed: false }]);
+      setTasks([...tasks, { id: Date.now(), text: newTaskText, completed: false }]); // Sets tasks array with new input
       setNewTaskText('');
     }
   };
 
   const removeTask = (taskId) => {
-    const updatedTasks = tasks.filter((task) => task.id !== taskId);
+    const updatedTasks = tasks.filter((task) => task.id !== taskId); // Array with removed tasks
     setTasks(updatedTasks);
   };
 
   const toggleComplete = (taskId) => {
     const updatedTasks = tasks.map((task) =>
-      task.id === taskId ? { ...task, completed: !task.completed } : task
-    );
+      task.id === taskId ? { ...task, completed: !task.completed } : task // Toggle complete for task
+    ); 
     setTasks(updatedTasks);
   };
 
+
   return (
-    <div>
-      <h2>Todo List</h2>
+    <div className='container'>
+      <h2 style={{ marginBottom:'35px'}}>Tasker</h2>
+      
       <div>
         <input
           type="text"
@@ -39,18 +40,20 @@ const TaskList = () => {
           onChange={handleNewTaskChange}
           placeholder="Add a new task..."
         />
-        <button onClick={addTask}>Add Task</button>
+        <button className='add' onClick={addTask}>Add Task</button>
       </div>
-      <ul>
+      <ul className='tasklist'>
         {tasks.map((task) => (
           <TaskItem
             key={task.id}
             task={task}
             onRemove={() => removeTask(task.id)}
             onToggleComplete={() => toggleComplete(task.id)}
+            
           />
         ))}
       </ul>
+    
     </div>
   );
 };
